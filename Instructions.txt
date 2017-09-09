@@ -1,0 +1,34 @@
+1. Create a MySQL schema named 'test'.
+
+2. Create a table named 'employee' under schema 'test'.
+
+CREATE TABLE `employee` (
+`employee_no` nvarchar(255) not null,
+`sam_account_name` nvarchar(255) null,
+`first_name` nvarchar(255) null,
+`middle_name` nvarchar(255) null,
+`last_name` nvarchar(255) null,
+`display_name` nvarchar(255) null,
+`job_title` nvarchar(255) null,
+primary key (`employee_no`)
+);
+
+3. In file database.js, user and password needs to be changed as per configuration of MySQL running on your localhost.
+
+4. Start server, run command -> node server.js
+
+5. HTTP requests can be tested using cURL or Postman. MySQL service will need to run on localhost. Base URL to test on -> http://localhost:3000
+
+6. Postman is used for this example, and employee_no is mandatory where applicable.
+   i. CREATE -> POST | http://localhost:3000/create?employee_no=00000001&sam_account_name=darryll.aeria&first_name=Darryll&last_name=Aeria&display_name=Darryll Aeria&job_title=Jedi
+             -> Record is added to database
+  
+  ii. READ   -> GET  | http://localhost:3000/get?employee_no=00000001
+             -> Record is retrieved from database based on input parameters
+
+ iii. UPDATE -> PUT  | http://localhost:3000/update?employee_no=00000001&sam_account_name=john.doe
+             -> Updates record based on employee_no
+
+  iv. DELETE -> DELETE | http://localhost:3000/remove?employee_no=00000001
+             -> Deletes record based on employee_no
+
