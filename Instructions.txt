@@ -1,6 +1,8 @@
-1. Create a MySQL schema named 'test'.
+1. Run npm install to import node_modules. node_modules directory excluded from Github.
 
-2. Create a table named 'employee' under schema 'test'.
+2. Create a MySQL schema named 'test'.
+
+3. Create a table named 'employee' under schema 'test'.
 
 CREATE TABLE `employee` (
 `employee_no` nvarchar(255) not null,
@@ -13,13 +15,13 @@ CREATE TABLE `employee` (
 primary key (`employee_no`)
 );
 
-3. In file database.js, user and password needs to be changed as per configuration of MySQL running on your localhost.
+4. In file database.js, user and password needs to be changed as per configuration of MySQL running on your localhost.
 
-4. Start server, run command -> node server.js
+5. Start server, run command -> node server.js
 
-5. HTTP requests can be tested using cURL or Postman. MySQL service will need to run on localhost. Base URL to test on -> http://localhost:3000
+6. HTTP requests can be tested using cURL or Postman. MySQL service will need to run on localhost. Base URL to test on -> http://localhost:3000
 
-6. Postman is used for this example, and employee_no is mandatory where applicable.
+7. Postman is used for this example, and employee_no is mandatory where applicable.
    i. CREATE -> POST | http://localhost:3000/create?employee_no=00000001&sam_account_name=darryll.aeria&first_name=Darryll&last_name=Aeria&display_name=Darryll Aeria&job_title=Jedi
              -> Record is added to database
   
